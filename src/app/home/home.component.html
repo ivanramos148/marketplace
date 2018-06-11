@@ -1,3 +1,18 @@
-<p>
-  home works!
-</p>
+
+<div class="inputBox">
+  <input #newTitle class="form-control">
+
+  <input #newDescription class="form-control">
+
+  <button (click)="addItem(newTitle.value, newDescription.value); newTitle.value=''; newDescription.value=''" class="btn btn-default">Submit</button>
+</div>
+<br><br>
+
+<div class="row" id="postContainer">
+  <div class="box" *ngFor="let itemPost of items">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/81QpshLNqeL._SL1500_.jpg">
+    <hr>
+    <h4>{{itemPost.title}}</h4>
+    <p>{{itemPost.description}}</p>
+  </div>
+</div>

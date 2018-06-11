@@ -1,0 +1,30 @@
+// htmlColors
+$mainColor: #24967b;
+$navBarColor: #21846d;
+// end of htmlColors
+header{
+  background-color: $mainColor;
+  padding-top: 3.2em;
+  padding-bottom: 3.2em;
+  h1{text-align: center; color: #ffffff}
+}
+div[class="navbar"] {
+  overflow: hidden;
+  background-color: $navBarColor;
+  a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px;
+      font-size: 17px;
+    }
+  a:hover{color: #64dbd1}
+}
+footer{
+  background-color: $mainColor;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  p{text-align: center; color: white; line-height: 5px}
+}
