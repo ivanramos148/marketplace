@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { masterFirebaseConfig } from './services/master-keys';
 
+
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
@@ -36,7 +37,7 @@ export const firebaseConfig = {
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

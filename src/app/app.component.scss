@@ -13,6 +13,7 @@ header{
 div[class="navbar"] {
   overflow: hidden;
   background-color: $navBarColor;
+  top: 0;
   .links a {
       float: left;
       display: block;
@@ -22,7 +23,6 @@ div[class="navbar"] {
       text-decoration: none;
       font-size: 17px;
     }
-
 }
 
 

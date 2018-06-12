@@ -1,22 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { ItemsService } from '../services/items.service';
+import { CommentsService } from '../services/comments.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Router } from '@angular/router';
 import { Item } from '../models/item';
 import { Location } from '@angular/common';
+import { Comment } from '../models/comment';
 
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss'],
-  providers: [ ItemsService ]
+  providers: [ ItemsService, CommentsService ]
 })
 export class DetailsComponent implements OnInit {
-  constructor(private routeTo: Router,private route: ActivatedRoute, private location: Location, private itemsService: ItemsService) { }
+  constructor(private routeTo: Router,private route: ActivatedRoute, private location: Location, private itemsService: ItemsService, public commentsService: CommentsService) { }
   postId: string;
   galleryPosts;
+  commentPost;
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -25,5 +28,11 @@ export class DetailsComponent implements OnInit {
      this.itemsService.getPostById(this.postId).subscribe(dataLastEmittedFromObserver => {
      this.galleryPosts = dataLastEmittedFromObserver;
     });
+    this.commentsService.getComnmentsId(this.postId).subscribe(dataLastEmittedFromObserver => {
+    this.commentPost = dataLastEmittedFromObserver;
+   });
+  }
+  addNewComment(newComment: string){
+    this.commentsService.addComments(new Comment(newComment), this.postId)
   }
 }

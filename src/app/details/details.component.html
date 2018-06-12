@@ -1,3 +1,16 @@
 <br><br><br>
-<img src="{{galleryPosts?.url}}" class="image">
-<br><br><br>
+<div class="imageBox">
+  <img src="{{galleryPosts?.url}}" class="image">
+</div><br>
+
+
+<p>{{galleryPosts?.description}}</p>
+
+<div class="commentSection">
+  <h4>Comments</h4>
+  <input #newComment class="form-control">
+  <button (click)="addNewComment(newComment.value)" name="button"></button>
+  <div *ngFor="let userComments of commentPost">
+    <p>{{userComments?.commentText}}</p>
+  </div>
+</div>
