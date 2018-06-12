@@ -2,7 +2,7 @@
 $mainColor: #24967b;
 $textColor: #666666;
 // end of HTML Colors
-#postContainer{margin-left: 40px;}
+div[class="postContainer"]{margin-left: 40px;}
 div[class="box"]{
   overflow: hidden;
   width: 310px;
@@ -13,16 +13,23 @@ div[class="box"]{
   border-color: #cccccc;
   img{
     width: 100%;
-    height: 78%;
+    height: 80%;
     cursor: pointer;
   }
-  h4{text-align: center; color: $textColor; line-height: 15px; margin-top: 0px}
-  p{text-align: center; color: $textColor; line-height: 15px; margin-top: 0px}
+  h4{text-align: center; color: $textColor; margin-top: 0px}
+  p{text-align: center; color: $textColor;margin-top: 0px}
 }
 div[class="inputBox"]{
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 350px;
-  input{margin-top: 10px; margin-bottom: 10px; width: 50%}
-  button{margin-top: 10px; margin-bottom: 10px;}
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  h4{text-align: center}
+  input{margin-top: 10px; margin-bottom: 10px;}
+  button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;}
 }

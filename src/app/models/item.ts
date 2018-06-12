@@ -1,4 +1,8 @@
 export class Item {
-  public isSold: false;
-  constructor(public title: string, public picture: string, public description: string){}
+  $key: string;
+  name:string;
+  url:string;
+  progress:number;
+  createdAt: Date = new Date();
+  constructor(public title: string, public file: any, public price: number, public description: string){}
 }
