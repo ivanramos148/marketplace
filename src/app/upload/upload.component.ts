@@ -25,5 +25,9 @@ export class UploadComponent {
     let newItems = new Item(newTitle, file, newPrice, newDescription)
     this.itemService.pushUpload(newItems)
   }
-
+  priorityColor(){
+    if(this.selectedFile){
+      return "color: yellow"
+    }
+  }
 }

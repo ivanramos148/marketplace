@@ -13,4 +13,7 @@ export class CommentsService {
   addComments(newComment: any, postId){
     this.database.list(`comments/${postId}`).push(newComment)
   }
+  userDeleteComment(currentComment: any, postId){
+    this.database.list(`comments/${postId}`).remove(currentComment)
+  }
 }

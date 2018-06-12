@@ -33,6 +33,15 @@ export class DetailsComponent implements OnInit {
    });
   }
   addNewComment(newComment: string){
-    this.commentsService.addComments(new Comment(newComment), this.postId)
+    let timestamp = new Date;
+    this.commentsService.addComments(new Comment(newComment, timestamp.toString()), this.postId)
+  }
+  deletePost(){
+    this.routeTo.navigate([''])
+    this.itemsService.deleteItem(this.postId)
+  }
+  deleteComment(currentComment){
+    console.log(currentComment)
+    this.commentsService.userDeleteComment(currentComment.$key, this.postId)
   }
 }

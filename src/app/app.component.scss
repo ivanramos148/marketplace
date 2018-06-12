@@ -1,6 +1,8 @@
 // htmlColors
 $mainColor: #24967b;
-$navBarColor: #21846d;
+$navBarColor: #1f876e;
+$socialIcon: #166b56;
+$textColor: #666666;
 // end of htmlColors
 header{
   background-color: $mainColor;
@@ -9,26 +11,37 @@ header{
   h1{text-align: center; color: #ffffff; }
 }
 
-
 div[class="navbar"] {
   overflow: hidden;
   background-color: $navBarColor;
   top: 0;
-  .links a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 14px;
-      text-decoration: none;
-      font-size: 17px;
-    }
+.links a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+    font-size: 17px;
+  }
 }
-
-
 footer{
   background-color: $mainColor;
   padding-top: 2em;
   padding-bottom: 2em;
   p{text-align: center; color: white; line-height: 5px}
+.fa{
+    padding: 14px;
+    font-size: 15px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  .socialIcons{
+    p{line-height: 0px; float: left; margin-top: 22px}
+    a{margin-left: 10px}
+  }
+  a{color: white; background-color: $socialIcon; border-radius: 60px}
 }

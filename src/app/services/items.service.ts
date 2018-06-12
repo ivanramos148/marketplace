@@ -41,4 +41,7 @@ export class ItemsService {
   addItem(newItem: Item){
     this.database.list(`items/`).push(newItem)
   }
+  deleteItem(currentItem){
+    this.database.list(`items/`).remove(currentItem)
+  }
 }
