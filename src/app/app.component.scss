@@ -6,22 +6,26 @@ header{
   background-color: $mainColor;
   padding-top: 3.2em;
   padding-bottom: 3.2em;
-  h1{text-align: center; color: #ffffff; font-size: 70px}
+  h1{text-align: center; color: #ffffff; }
 }
+
+
 div[class="navbar"] {
   overflow: hidden;
   background-color: $navBarColor;
-  a {
+  .links a {
       float: left;
       display: block;
-      color: white;
+      color: #f2f2f2;
       text-align: center;
+      padding: 14px 14px;
       text-decoration: none;
-      padding: 10px;
       font-size: 17px;
     }
-  a:hover{color: #64dbd1}
+
 }
+
+
 footer{
   background-color: $mainColor;
   padding-top: 2em;

@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { Item } from '../models/item'
-import { Router } from '@angular/router';
 import { ItemsService } from '../services/items.service';
 declare var $:any;
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-upload',
+  templateUrl: './upload.component.html',
+  styleUrls: ['./upload.component.scss'],
   providers: [ ItemsService ]
 })
-export class HomeComponent implements OnInit {
+export class UploadComponent {
   items: FirebaseListObservable<Item[]>
   selectedFile: any;
-
-  constructor(private itemservices: ItemsService, private route: Router ) { }
-  ngOnInit() {
-    this.items = this.itemservices.getItems()
+  constructor(private itemService: ItemsService) { }
+  clickFileBtn(){
+    $('#filePressed').click()
   }
   readFile(event){
     this.selectedFile = event.target.files[0]
@@ -25,9 +23,7 @@ export class HomeComponent implements OnInit {
   addNewItem(newTitle: string, newPrice: number, newDescription: string){
     let file = this.selectedFile;
     let newItems = new Item(newTitle, file, newPrice, newDescription)
-    this.itemservices.pushUpload(newItems)
+    this.itemService.pushUpload(newItems)
   }
-  goToDetails(clickedPost){
-    this.route.navigate(['details', clickedPost.$key]);
-  }
+
 }

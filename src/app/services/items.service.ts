@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Item } from '../models/item';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import * as firebase from 'firebase/app'
+import { Router } from '@angular/router';
 import 'firebase/storage';
 
 
 @Injectable()
 export class ItemsService {
   items: FirebaseListObservable<Item[]>;
-  constructor(private database: AngularFireDatabase){
+  constructor(private route: Router, private database: AngularFireDatabase){
     this.items = database.list('items');
   }
   pushUpload(upload: Item) {
@@ -31,10 +32,13 @@ export class ItemsService {
       }
     )
   }
-  addItem(newItem: Item){
-    this.database.list(`items/`).push(newItem)
-  }
   getItems(){
     return this.items
+  }
+  getPostById(postId: string){
+    return this.database.object(`items/${postId}`);
+  }
+  addItem(newItem: Item){
+    this.database.list(`items/`).push(newItem)
   }
 }

@@ -1,0 +1,20 @@
+$mainColor: #24967b;
+$textColor: #666666;
+
+div[class="inputBox"]{
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  h4{text-align: center}
+  input{margin-top: 10px; margin-bottom: 10px;}
+  #buttonFile{width: 100%; background-color: $mainColor; color: white}
+  #filePressed{display: none;}
+  button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
