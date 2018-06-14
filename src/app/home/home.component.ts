@@ -19,14 +19,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.items = this.itemservices.getItems()
   }
-  readFile(event){
-    this.selectedFile = event.target.files[0]
-  }
-  addNewItem(newTitle: string, newPrice: number, newDescription: string){
-    let file = this.selectedFile;
-    let newItems = new Item(newTitle, file, newPrice, newDescription)
-    this.itemservices.pushUpload(newItems)
-  }
   goToDetails(clickedPost){
     this.route.navigate(['details', clickedPost.$key]);
   }

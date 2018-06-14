@@ -1,7 +1,9 @@
-<div class="row" id="postContainer">
-  <div class="box" *ngFor="let itemPost of items | async">
-    <img src="{{itemPost.url}}" (click)="goToDetails(itemPost)">
-    <h4>{{itemPost.title}}</h4>
-    <p>${{itemPost.price}}.00</p>
+<div class="content">
+  <div class="row" id="postContainer">
+    <div class="box" *ngFor="let itemPost of items | async">
+      <img src="{{itemPost.url}}" (click)="goToDetails(itemPost)">
+      <h4>{{itemPost.title}}</h4>
+      <p>${{itemPost.price}}.00</p>
+    </div>
   </div>
 </div>

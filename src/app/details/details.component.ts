@@ -21,6 +21,7 @@ export class DetailsComponent implements OnInit {
   currentUserId: string;
   isLoggedIn: boolean;
   userName: string;
+  userPhoto: string;
   galleryPosts;
   commentPost;
   user;
@@ -39,6 +40,7 @@ export class DetailsComponent implements OnInit {
       } else {
         this.isLoggedIn = true;
         this.userName = user.displayName
+        this.userPhoto = user.photoURL
       }
     });
    }
@@ -57,10 +59,13 @@ export class DetailsComponent implements OnInit {
   addNewComment(newComment: string){
     let timestamp = new Date;
     this.commentsService.addComments(new Comment(newComment, timestamp.toString(), this.userName), this.postId)
+    console.log(newComment)
   }
   deletePost(){
-    this.routeTo.navigate([''])
-    this.itemsService.deleteItem(this.postId)
+    if(confirm('you sure you want to remove this item?')){
+      this.routeTo.navigate([''])
+      this.itemsService.deleteItem(this.postId)
+    }
   }
   deleteComment(currentComment){
     this.commentsService.userDeleteComment(currentComment.$key, this.postId)

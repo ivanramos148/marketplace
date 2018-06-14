@@ -1,16 +1,18 @@
 // htmlColors
 $mainColor: #24967b;
 $navBarColor: #1f876e;
-$socialIcon: #166b56;
+$socialIcon: #156d59;
 $textColor: #666666;
 // end of htmlColors
 header{
   background-color: $mainColor;
   padding-top: 3.2em;
   padding-bottom: 3.2em;
-  h1{text-align: center; color: #ffffff; }
+  h1{font-family: 'Hammersmith One', sans-serif; text-align: center; color: #ffffff; font-size: 55px}
 }
-
+.wrap{
+  min-height: calc(100vh - 114px)
+}
 div[class="navbar"] {
   overflow: hidden;
   background-color: $navBarColor;
@@ -43,7 +45,7 @@ footer{
   }
   .socialIcons{
     p{line-height: 0px; float: left; margin-top: 22px}
-    a{margin-left: 10px}
+    a{margin-left: 8px}
   }
   a{color: white; background-color: $socialIcon; border-radius: 60px}
 }
