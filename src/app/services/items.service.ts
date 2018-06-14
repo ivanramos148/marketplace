@@ -35,6 +35,16 @@ export class ItemsService {
   getItems(){
     return this.items
   }
+  searchItems(start, end){
+    return this.database.list('/items', {
+      query: {
+        orderByChild: 'title',
+        limitToFirst: 10,
+        startAt: start,
+        endAt: end
+      }
+    });
+  }
   getPostById(postId: string){
     return this.database.object(`items/${postId}`);
   }

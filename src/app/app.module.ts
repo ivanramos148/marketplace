@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UploadComponent } from './upload/upload.component';
 import { DetailsComponent } from './details/details.component';
+import { SearchComponent } from './search/search.component';
+import { UsersComponent } from './users/users.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -28,7 +30,9 @@ export const firebaseConfig = {
     AppComponent,
     HomeComponent,
     UploadComponent,
-    DetailsComponent
+    DetailsComponent,
+    SearchComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

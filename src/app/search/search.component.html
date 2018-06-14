@@ -1,0 +1,17 @@
+
+<div id="box" class="col-lg-6">
+  <div id="inputfeilds" class="input-group">
+    <button type="button" name="button" class="btn btn-default">
+      <p class="fa fa-search"></p>
+    </button>
+    <input id='searchbar' placeholder="Search..."(keydown)="search($event)" class="form-control">
+  </div>
+</div><br>
+
+<div *ngFor="let searchItems of items">
+  <h4 (click)="goToDetails(searchItems)">{{searchItems?.title}}</h4><br>
+</div>
+
+<div *ngIf="items?.length < 1">
+  <p>No results were found</p>
+</div>

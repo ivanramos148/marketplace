@@ -16,14 +16,16 @@ div[class="navbar"] {
   background-color: $navBarColor;
   top: 0;
 .links a {
+    cursor: pointer;
     float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 14px;
+    padding: 14px 10px;
     text-decoration: none;
     font-size: 17px;
   }
+  #search{margin-top: 0.2em}
 }
 footer{
   background-color: $mainColor;

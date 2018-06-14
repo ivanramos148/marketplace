@@ -10,7 +10,7 @@ export class CommentsService {
   getComnmentsId(postId){
     return this.database.list(`comments/${postId}`)
   }
-  addComments(newComment: any, postId){
+  addComments(newComment, postId){
     this.database.list(`comments/${postId}`).push(newComment)
   }
   userDeleteComment(currentComment: any, postId){

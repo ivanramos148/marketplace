@@ -5,11 +5,13 @@
 <div class="navbar">
   <div class="links">
     <a routerLink="">Home</a>
-    <a routerLink="upload">Upload</a>
+    <a *ngIf="isLoggedIn" routerLink="upload">Upload</a>
+    <a *ngIf="!isLoggedIn" (click)="logIn()">Log in</a>
+    <a *ngIf="isLoggedIn" (click)="logOut()">Log out</a>
+    <a *ngIf="isLoggedIn">{{userName}}</a>
+    <a routerLink="search" id="search" class="fa fa-search"></a>
   </div>
 </div>
-
-
 
 
 <div class="container">

@@ -8,17 +8,18 @@
   <h4>${{galleryPosts?.price}}.00</h4>
   <p>{{galleryPosts?.description}}</p>
 </div>
-<button (click)="deletePost()" class="btn btn-danger">DeletePost</button>
+<button (click)="deletePost()" class="btn btn-danger" *ngIf="isLoggedIn">DeletePost</button>
 <div class="commentSection">
-  <h4>Comments</h4>
+  <h2>Comments</h2>
   <div class="addComment">
     <input #newComment class="form-control">
     <button (click)="addNewComment(newComment.value)" name="button" class="btn btn-default">Add</button>
   </div>
-  <div *ngFor="let userComments of commentPost">
+  <div *ngFor="let userComments of commentPost"><br>
+    <h4>By {{userComments?.userComment}}</h4>
     <p>{{userComments?.commentText}}</p>
     <p>{{userComments?.timestamp}}</p>
-    <button (click)="deleteComment(userComments)" class="btn btn-danger">Delete</button>
+    <button *ngIf="isLoggedIn" (click)="deleteComment(userComments)" class="btn btn-danger">Delete</button>
     <hr>
   </div>
 </div>
