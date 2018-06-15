@@ -16,4 +16,7 @@ export class CommentsService {
   userDeleteComment(currentComment: any, postId){
     this.database.list(`comments/${postId}`).remove(currentComment)
   }
+  deleteAll(postId){
+    this.database.list(`comments/`).remove(postId.$key)
+  }
 }

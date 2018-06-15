@@ -64,6 +64,7 @@ export class DetailsComponent implements OnInit {
   deletePost(){
     if(confirm('you sure you want to remove this item?')){
       this.routeTo.navigate([''])
+      this.commentsService.deleteAll(this.postId)
       this.itemsService.deleteItem(this.postId)
     }
   }

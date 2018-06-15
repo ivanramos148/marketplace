@@ -5,6 +5,7 @@
 /dist-server
 /tmp
 /out-tsc
+/src/app/services/master-keys.ts
 
 # dependencies
 /node_modules

@@ -17,6 +17,7 @@ export class UploadComponent {
   selectedFile: any;
   userName: string;
   userId: string;
+  userPhoto: string;
   constructor(private itemService: ItemsService, private afAuth: AuthService) {
     {
       this.afAuth.user.subscribe(user => {
@@ -24,6 +25,7 @@ export class UploadComponent {
         } else {
           this.userName = user.displayName
           this.userId = user.uid
+          this.userPhoto = user.photoURL
         }
       });
      }
@@ -36,7 +38,7 @@ export class UploadComponent {
   }
   addNewItem(newTitle: string, newPrice: number, newDescription: string){
     let file = this.selectedFile;
-    let newItems = new Item(newTitle, file, newPrice, newDescription, this.userName , this.userId )
+    let newItems = new Item(newTitle, file, newPrice, newDescription, this.userName , this.userId, this.userPhoto )
     this.itemService.pushUpload(newItems)
   }
   priorityColor(){

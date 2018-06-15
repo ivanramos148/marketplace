@@ -7,8 +7,11 @@
 
 <div class="userDetails">
   <div class="container">
-    <img src="{{userPhoto}}">
+    <img src="{{galleryPosts?.userPhoto}}">
     <h4>{{galleryPosts?.userName}}</h4>
+    <button (click)="checkProfile()" class="btn btn-default">
+      <p>Follow User</p>
+    </button>
   </div>
 </div>
 
@@ -16,7 +19,7 @@
   <h1>{{galleryPosts?.title}}</h1>
   <h4>${{galleryPosts?.price}}.00</h4>
   <p>{{galleryPosts?.description}}</p>
-</div><br>
+</div>
 
 <button (click)="deletePost()" class="btn btn-danger" *ngIf="isLoggedIn">DeletePost</button>
 
@@ -25,8 +28,7 @@
   <div class="addComment">
     <div *ngIf="isLoggedIn">
       <input #newComment class="form-control">
-
-      <button (click)="addNewComment(newComment.value)" name="button" class="btn btn-default">Add</button>
+      <button (click)="addNewComment(newComment.value); newComment.value=''" name="button" class="btn btn-default">Add</button>
     </div>
   </div>
   <br>

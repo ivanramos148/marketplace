@@ -4,5 +4,5 @@ export class Item {
   url:string;
   progress:number;
   createdAt: Date = new Date();
-  constructor(public title: string, public file: any, public price: number, public description: string, public userName: string, public userId: string){}
+  constructor(public title: string, public file: any, public price: number, public description: string, public userName: string, public userId: string, public userPhoto: string){}
 }
