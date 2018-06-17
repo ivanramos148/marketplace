@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { ProfileService } from './services/profile.service'
@@ -9,11 +9,21 @@ import { ProfileService } from './services/profile.service'
   styleUrls: ['./app.component.scss'],
   providers: [ AuthService, ProfileService ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
   isLoggedIn: boolean;
   userName: string;
   userId: string;
+
+  ngOnInit(){}
+  myFunction(){
+    var x = document.getElementById("myTopnav");
+      if (x.className === "navbar") {
+          x.className += " responsive";
+      } else {
+          x.className = "navbar";
+      }
+  }
 
   constructor(private auth: AuthService, private route: Router){
     this.auth.user.subscribe(user => {
@@ -26,6 +36,7 @@ export class AppComponent {
       }
     });
   }
+
   clickedProfile(){
     this.route.navigate(['profile', this.userId]);
   }

@@ -1,8 +1,10 @@
-<div class="inputBox">
-  <button [style]="priorityColor()" (click)="clickFileBtn()" class="btn btn-default" id="buttonFile">Upload FIle</button>
-  <input type="file" (change)="readFile($event)" accept="image/*" id="filePressed">
-  <input #newTitle class="form-control" placeholder="Title" maxlength="20">
-  <input #newPrice class="form-control" placeholder="Price" type="number">
-  <input #newDescription class="form-control"  placeholder="Description">
-  <button  (click)="addNewItem(newTitle.value, newPrice.value, newDescription.value); newTitle.value=''; newDescription.value='';  newPrice.value=''" class="btn btn-default" [disabled]="!selectedFile">Submit</button>
+<div class="container">
+  <div class="inputBox">
+    <button (click)="clickFileBtn()" class="btn btn-default" id="buttonFile">Upload FIle</button>
+    <input type="file" (change)="readFile($event)" accept="image/*" id="filePressed">
+    <input #newTitle class="form-control" placeholder="Title" maxlength="20">
+    <input #newPrice class="form-control" placeholder="Price" type="number">
+    <input #newDescription class="form-control"  placeholder="Description">
+    <button (click)="addNewItem(newTitle.value, newPrice.value, newDescription.value); newTitle.value=''; newDescription.value='';  newPrice.value=''" class="btn btn-default" [disabled]="!selectedFile">Submit</button>
+  </div>
 </div>

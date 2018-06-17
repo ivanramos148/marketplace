@@ -2,11 +2,10 @@
 $mainColor: #24967b;
 $textColor: #666666;
 // end of HTML Colors
-div[class="postContainer"]{margin-left: 40px;}
 div[class="box"]{
   overflow: hidden;
-  width: 255px;
-  height: 350px;
+  width: 235px;
+  height: 400px;
   border: 1px solid black;
   margin: 15px;
   border-radius: 10px;
@@ -19,10 +18,39 @@ div[class="box"]{
   h4{text-align: center; color: $textColor; margin-top: 0px}
   p{text-align: center; color: $textColor;margin-top: 0px}
 }
-
-
-@media only screen and (max-width: 332px) {
+div[class="container"]{
+  max-width:1590px;
+}
+//IPADS PRO AND NORMAL
+@media only screen and (max-width: 1024px) {
   div[class="content"]{
-    margin-left: 15px;
+    margin-left: 120px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  div[class="content"]{
+    margin-left: 120px;
+  }
+}
+
+//IPHONE X
+@media only screen and (max-width: 414px) {
+  div[class="content"]{
+    margin-left:75px;
+  }
+}
+@media only screen and (max-width: 411px) {
+  div[class="content"]{
+    margin-left:70px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  div[class="content"]{
+    margin-left: 55px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  div[class="content"]{
+    margin-left: 30px;
   }
 }

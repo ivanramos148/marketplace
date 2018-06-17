@@ -23,7 +23,7 @@ $mainColor: #24967b;
   div[class="commentSection"]{
   margin: 10px;
   margin-left: 00px;
-    input{float: left; width: 70%;}
+    input{float: left; width: 90%;}
     .userDecor{
       width: 70%;
       border-radius: 10px;
@@ -32,7 +32,7 @@ $mainColor: #24967b;
       h4{color:$userColor}
       #comment{line-height: 20px; font-size: 20px}
       p{line-height: 5px; font-size: 12px}
-      .btn-danger{margin-bottom: 8px; line-height: 15px; border-radius: 50px}
+      .btn-danger{margin-bottom: 8px; line-height: 15px; border-radius: 50px;}
     }
   }
 
@@ -44,7 +44,7 @@ $mainColor: #24967b;
   overflow: hidden;
   border-radius: 15px;
   border-color: $textColor;
-  margin-right: 280px;
+  margin-right: 65px;
   float: right;
     img{width: 75px; height: 75px; border-radius: 50px; float: left; margin-right: 7px; cursor: pointer;}
     h4{margin-top: 0px; float: left; margin-left: 20px}
@@ -62,6 +62,10 @@ $mainColor: #24967b;
   }
 
   div[class="commentSection"]{
+  input{
+    float: left;
+    width: 80%;
+  }
   .userDecor{
   width: 65%;
   border-radius: 10px;
@@ -89,7 +93,7 @@ $mainColor: #24967b;
   div[class="commentSection"]{
     input{
       float: left;
-      width: 67%;
+      width: 80%;
     }
   .userDecor{
     width: 100%;
@@ -105,7 +109,6 @@ $mainColor: #24967b;
     margin-left: auto;
     margin-right: auto;
     display: block;
-
     img{
       height: 100%;
       width: 100%;

@@ -1,46 +1,48 @@
-<br>
-<div class="imageBox">
-  <img src="{{galleryPosts?.url}}" class="image">
-</div>
-<br>
-
-
-<div class="userDetails">
-  <div class="container">
-    <img src="{{galleryPosts?.userPhoto}}">
-    <h4>{{galleryPosts?.userName}}</h4>
-    <button (click)="checkProfile()" class="btn btn-default">
-      <p>Follow User</p>
-    </button>
-  </div>
-</div>
-
-<div class="postDetails">
-  <h1>{{galleryPosts?.title}}</h1>
-  <h4>${{galleryPosts?.price}}.00</h4>
-  <p>{{galleryPosts?.description}}</p>
-</div>
-
-<button (click)="deletePost()" class="btn btn-danger" *ngIf="isLoggedIn">DeletePost</button>
-
-<div class="commentSection">
-  <h2>Comments</h2>
-  <div class="addComment">
-    <div *ngIf="isLoggedIn">
-      <input #newComment class="form-control">
-      <button (click)="addNewComment(newComment.value); newComment.value=''" name="button" class="btn btn-default">Add</button>
-    </div>
+<div class="container">
+  <br>
+  <div class="imageBox">
+    <img src="{{galleryPosts?.url}}" class="image">
   </div>
   <br>
-  <div *ngFor="let userComments of commentPost">
-    <div class="userDecor">
-      <div class="container">
-        <h4 id="userName">{{userComments?.userComment}}</h4>
-        <p id="comment">{{userComments?.commentText}}</p>
-        <p>{{userComments?.timestamp}}</p>
-        <button *ngIf="isLoggedIn" (click)="deleteComment(userComments)" class="btn btn-danger">Delete</button>
+
+
+  <div class="userDetails">
+    <div class="container">
+      <img src="{{galleryPosts?.userPhoto}}">
+      <h4>{{galleryPosts?.userName}}</h4>
+      <button (click)="checkProfile()" class="btn btn-default">
+        <p>Follow User</p>
+      </button>
+    </div>
+  </div>
+
+  <div class="postDetails">
+    <h1>{{galleryPosts?.title}}</h1>
+    <h4>${{galleryPosts?.price}}.00</h4>
+    <p>{{galleryPosts?.description}}</p>
+  </div>
+
+  <button (click)="deletePost()" class="btn btn-danger" *ngIf="isLoggedIn">DeletePost</button>
+
+  <div class="commentSection">
+    <h2>Comments</h2>
+    <div class="addComment">
+      <div *ngIf="isLoggedIn">
+        <input #newComment class="form-control">
+        <button (click)="addNewComment(newComment.value); newComment.value=''" name="button" class="btn btn-default">Add</button>
       </div>
     </div>
     <br>
+    <div *ngFor="let userComments of commentPost">
+      <div class="userDecor">
+        <div class="container">
+          <h4 id="userName">{{userComments?.userComment}}</h4>
+          <p id="comment">{{userComments?.commentText}}</p>
+          <p>{{userComments?.timestamp}}</p>
+          <button *ngIf="isLoggedIn" (click)="deleteComment(userComments)" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+      <br>
+    </div>
   </div>
 </div>

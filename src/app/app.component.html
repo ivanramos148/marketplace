@@ -1,24 +1,24 @@
 <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="wrap">
-<header>
-  <h1>Market Hub</h1>
-</header>
-<div class="navbar">
-  <div class="links">
-    <a routerLink="">Home</a>
-    <a *ngIf="isLoggedIn" routerLink="upload">Upload</a>
-    <a *ngIf="!isLoggedIn" (click)="logIn()">Log in</a>
-    <a *ngIf="isLoggedIn" (click)="logOut()">Log out</a>
-    <a *ngIf="isLoggedIn">{{userName}}</a>
-    <a routerLink="search" id="search" class="fa fa-search"></a>
+<div class="upperBox">
+  <header>
+    <h1>Market Hub</h1>
+  </header>
+  <div class="navbar" id="myTopnav">
+    <div class="links">
+      <a routerLink="">Home</a>
+      <a *ngIf="isLoggedIn" routerLink="upload">Upload</a>
+      <a *ngIf="!isLoggedIn" (click)="logIn()">Log in</a>
+      <a *ngIf="isLoggedIn" (click)="logOut()">Log out</a>
+      <a *ngIf="isLoggedIn">{{userName}}</a>
+      <a routerLink="search" id="search" class="fa fa-search"></a>
+      <a style="font-size:15px;" id="mobileIcon" (click)="myFunction()">&#9776;</a>
+    </div>
   </div>
 </div>
 
-
-<div class="container">
   <router-outlet></router-outlet>
-</div>
 
 </div>
 <footer>
