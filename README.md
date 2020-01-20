@@ -1,7 +1,5 @@
 # Marketplace
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
-
 ### Description
 
 Market-Hub is a place where anyone can upload their used or new items to the marketplace and sell them to anyone, a user can sign in using their google account and have comments under their items if anyone is interested.
